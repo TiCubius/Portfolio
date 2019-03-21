@@ -1,0 +1,99 @@
+// KTartiere - Portfolio - SASS/portfolio
+// AUTHOR: TiCubius
+// VERSION: V1.00
+
+#projects
+    display: flex
+
+    flex-direction: column
+    justify-content: center
+    width: 100vw
+
+    margin: 0 auto
+
+    #filters
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+
+        width: 100%
+        margin: 32px 0
+
+        .filter
+            display: flex
+            justify-content: center
+            align-items: center
+
+            height: 50px
+            width: 300px
+
+            color: white
+            text-transform: uppercase
+
+            margin-bottom: 20px
+            border: 2px solid white
+
+            &.active
+                background: #b63636
+
+    #list
+        display: grid
+        width: 100vw
+
+        .project
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+
+            width: 100%
+            height: calc(100vw * 9 / 16)
+
+            color: white
+            background: #b63636
+
+            .image
+                width: 25%
+                margin-bottom: 10px
+
+            &.hidden
+                opacity: .5
+
+            &:nth-child(2n)
+                background: green
+
+            &:hover
+                filter: brightness(120%)
+
+
+
+@media only screen and (min-width: 480px)
+    #filters
+        flex-direction: row !important
+
+        .filter
+            width: calc(100%/ 3 - 20px) !important
+
+    #list
+        grid-template-columns: repeat(2, 1fr)
+
+        .project
+            height: calc(50vw * 9 / 16) !important
+
+
+
+@media only screen and (min-width: 960px)
+    #filters
+        margin: 32px auto !important
+        max-width: 960px !important
+
+        .filter
+            width: 300px !important
+
+    #list
+        margin: 0 auto !important
+        max-width: 960px !important
+
+        .project
+            height: calc(480px * 9 / 16) !important
