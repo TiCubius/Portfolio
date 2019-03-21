@@ -11,5 +11,12 @@ const mix = require('laravel-mix')
  |
  */
 
-mix.sass('resources/sass/app.sass', 'public/css')
+mix.sass('resources/sass/app.sass', 'public/assets/css')
+    .styles([
+        'resources/css/fontawesome.min.css',
+        'resources/css/highlight.min.css',
+        'resources/css/fonts.css',
+    ], 'public/assets/css/libs.min.css')
+    .copyDirectory('resources/js/libs', 'public/assets/js/libs')
+    .copyDirectory('resources/webfonts', 'public/assets/webfonts')
     .copyDirectory('resources/images', 'public/storage/images')

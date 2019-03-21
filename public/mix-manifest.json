@@ -1,3 +1,4 @@
 {
-    "/css/app.css": "/css/app.css"
+    "/assets/css/app.css": "/assets/css/app.css",
+    "/assets/css/libs.min.css": "/assets/css/libs.min.css"
 }
