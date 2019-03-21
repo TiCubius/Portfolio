@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <title>Kevin Tartiere | Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="{{ asset("assets/css/app.css") }}">
-        <link href="{{ asset("assets/css/libs.min.css") }}" rel="stylesheet">
+
         <script defer>
 
             let bgAnimate = setInterval(() => {
-                if (document.querySelector(`html`).style.background === `rgb(34, 45, 49) none repeat scroll 0% 0%`) {
+                if (document.querySelector(`html`).dataset.bg === `#222d31`) {
                     document.querySelector(`html`).style.background = `#364BB6`
+                    document.querySelector(`html`).dataset.bg = `#364BB6`
                 } else {
                     document.querySelector(`html`).style.background = `#222d31`
+                    document.querySelector(`html`).dataset.bg = `#222d31`
                 }
             }, 1000)
 
             window.onload = () => {
                 clearInterval(bgAnimate)
-                if (typeof(primaryColor) !== "undefined") {
+                if (typeof (primaryColor) !== "undefined") {
                     document.querySelector(`html`).style.background = primaryColor
                 } else {
                     document.querySelector(`html`).style.background = `#364BB6`
@@ -28,6 +30,7 @@
         </script>
     </head>
     <body>
+        <link href="{{ asset("assets/css/libs.min.css") }}" rel="stylesheet">
 
         @yield("header")
         @yield("content")
