@@ -31,12 +31,10 @@
     </head>
     <body>
         <link href="{{ asset("assets/css/libs.min.css") }}" rel="stylesheet">
-
         @yield("header")
         @yield("content")
 
-        {{--<script src="{{ asset("js/libs/webpjs-0.0.2.min.js") }}"></script>--}}
-        <script src="{{ asset("assets/js/libs/highlight.min.js") }}"></script>
+        <script src="{{ asset("assets/js/libs.min.js") }}"></script>
         <script>hljs.initHighlightingOnLoad()</script>
         <script>
             document.querySelectorAll(`.js-slider`).forEach((slider) => {

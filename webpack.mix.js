@@ -17,6 +17,8 @@ mix.sass('resources/sass/app.sass', 'public/assets/css')
         'resources/css/highlight.min.css',
         'resources/css/fonts.css',
     ], 'public/assets/css/libs.min.css')
-    .copyDirectory('resources/js/libs', 'public/assets/js/libs')
+    .scripts([
+        'resources/js/libs/highlight.min.js',
+    ], 'public/assets/js/libs.min.js')
     .copyDirectory('resources/webfonts', 'public/assets/webfonts')
     .copyDirectory('resources/images', 'public/storage/images')

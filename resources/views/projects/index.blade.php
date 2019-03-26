@@ -33,7 +33,13 @@
             @foreach($projects as $project)
                 <a class="js-project" href="{{ route("projects.show", [$project]) }}">
                     <div class="project" style="background: {{ $project->primary_color }}" data-tags="{{ $project->tags->implode('name', ',') }}">
-                        <img class="image" src="{{ asset("storage/images/projects/{$project->id}/thumbnail.webp") }}" alt="{{ $project->title }}">
+                        <picture>
+                            <source srcset="{{ asset("storage/images/projects/{$project->id}/thumbnail.webp") }}" type="image/webp">
+                            <source srcset="{{ asset("storage/images/projects/{$project->id}/thumbnail.png") }}" type="image/png">
+
+                            <img class="image" src="{{ asset("storage/images/projects/{$project->id}/thumbnail.webp")  }}">
+                        </picture>
+
 
                         <h4>{{ $project->title }}</h4>
                     </div>
